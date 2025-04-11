@@ -1,0 +1,45 @@
+.resources-container {
+	width: 100%;
+}
+
+.resources-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.resource-section h2 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.resource-item {
+	margin-bottom: 0.5rem;
+}
+
+.resource-subitems {
+	margin-left: 1rem;
+	margin-top: 0.5rem;
+}
+
+.resource-subitem {
+	margin-bottom: 0.25rem;
+}
+
+.resource-tertiary-item {
+	margin-left: 1rem;
+	margin-top: 0.25rem;
+	font-size: 0.875rem;
+	color: #4b5563
+}
+
+.resource-link {
+	color: #2563eb;
+	text-decoration: none;
+}
+
+.resource-link:hover {
+	color: #1e40af;
+	text-decoration: underline;
+}

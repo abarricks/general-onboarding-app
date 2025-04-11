@@ -1,0 +1,76 @@
+.task-card {
+	background-color: #ffffff;
+	border: 1px solid #c4c4c4;
+	border-radius: 22px;
+	padding: 20px;
+	margin: 20px;
+}
+  
+.task-card-header {
+	margin-bottom: 10px;
+}
+  
+.task-pre-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
+	color: #737373;
+}
+  
+.task-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #000;
+}
+  
+.progress-bar-container {
+	position: relative;
+	background-color: #eaeaea;
+	border-radius: 7.5px;
+	height: 9px;
+	margin-top: 10px;
+}
+  
+.progress-bar {
+	height: 9px;
+	border-radius: 7.5px;
+}
+  
+.progress-text {
+	font-size: 11px;
+	color: #737373;
+	margin-top: 5px;
+	margin-bottom: 30px;
+}
+  
+.divider-line {
+	width: 100%;
+	height: 1px;
+	background: #d9d9d9;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+  
+.task-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 0px;
+}
+  
+.task-due-date {
+	font-size: 11px;
+	color: #494949;
+}
+  
+.bold-text {
+	font-weight: bold;
+}
+  
+.task-status {
+	padding: 3px 10px;
+	border-radius: 15px;
+	font-size: 11px;
+	color: #ffffff;
+	text-align: center;
+}

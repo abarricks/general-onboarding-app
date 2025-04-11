@@ -1,0 +1,241 @@
+.subtask-item {
+  background: white;
+  border: 1px solid #c4c4c4;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Header and controls styling */
+.subtask-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.subtask-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Status control styles */
+.status-control {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.status-control:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Status dropdown styles */
+.status-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: auto;
+  min-width: 180px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  display: none;
+}
+
+.status-control:hover .status-dropdown,
+.status-dropdown:hover {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Status option styles */
+.status-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.status-option:hover {
+  background-color: #f5f5f5;
+}
+
+.status-option.active {
+  background-color: #e3f2fd;
+}
+
+/* Subtask details section */
+.subtask-details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.detail-section {
+  margin-bottom: 24px;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section h4 {
+  margin: 0 0 12px 0;
+  color: #333;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+/* Rich text and list styling */
+.rich-text-container {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base list styles... unified padding for all lists */
+.content-list,
+.rich-text-container ul,
+.rich-text-container ol,
+ol.content-list,
+.detail-section ol,
+.detail-section ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 2rem !important;
+  list-style-position: outside;
+}
+
+/* List item spacing */
+.content-list-item,
+.rich-text-container li,
+.rich-text-container ul li,
+.rich-text-container ol li,
+ol.content-list li {
+  margin: 0;
+  margin-bottom: 0.25rem;
+  padding: 0;
+}
+
+.rich-text-container ul ul,
+.rich-text-container ol ol,
+.rich-text-container ul ol,
+.rich-text-container ol ul {
+  margin: 0;
+  padding-left: 2rem !important;
+}
+
+/* Image styles */
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.instruction-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Resource styles */
+.resources-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-item {
+  width: 100%;
+}
+
+.image-preview {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resource-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.image-caption {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+.image-description {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+/* Fixes nested list padding + margins for steps */
+ol.content-list {
+  padding-left: 2rem !important;
+  margin-left: 0;
+}
+
+.detail-section ol > li {
+  padding-left: 0.5rem;
+}
+
+.level-1 { margin-left: 0 !important; }
+.level-2 { margin-left: 2rem !important; }
+.level-3 { margin-left: 4rem !important; }
+
+.content-list-item a,
+.detail-section a {
+	color: #2563eb;
+	text-decoration: none;
+}
+
+.content-list-item a:hover,
+.detail-section a:hover {
+	color: #1e40af;
+	text-decoration: underline;
+}

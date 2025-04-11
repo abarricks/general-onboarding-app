@@ -1,0 +1,15 @@
+.home-page-container {
+	width: 100%;
+}
+  
+.task-card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+	gap: 5px;
+}
+  
+.task-card {
+	background-color: #ffffff;
+	border: 1px solid #c4c4c4;
+	box-sizing: border-box;
+}

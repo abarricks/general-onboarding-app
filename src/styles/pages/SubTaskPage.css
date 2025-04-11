@@ -1,0 +1,63 @@
+.subtask-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+  
+.subtasks-container {
+  margin-top: 32px;
+}
+  
+.not-found {
+  text-align: center;
+  padding: 40px;
+}
+  
+.not-found button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+  
+.not-found button:hover {
+  background-color: #1976d2;
+}
+
+.rich-text-container {
+  line-height: 1.5;
+}
+
+.rich-text-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.rich-text-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* Return button */
+.return-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.return-button {
+  background-color: #15171c;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.return-button:hover {
+  opacity: 0.9;
+}
