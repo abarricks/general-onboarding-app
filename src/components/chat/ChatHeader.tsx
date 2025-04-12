@@ -165,7 +165,7 @@ export const ChatHeader = observer(() => {
                             </Stack>
                         </StyledTitle>
                         <StyledDescription variant="body2">
-                            Here to help answer your questions about the onboarding process. Information from the following onboarding documents were used to train this model: BPASS Business Processes (PPT), How to request a CAC card (DOC), ESA-BAD Onboarding-Offboarding Processes (PPT), Deloitte MITO & ESA-BAD Onboarding (PPT), and SEMOSS and GovConnect.ai trainings (PPTs).
+                            The Onboarding Assistant is here to help answer your questions about the onboarding process. 
                         </StyledDescription>
                     </StyledPaper> 
 

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {FiSidebar, FiInfo} from 'react-icons/fi';
 import {SidebarData} from './SidebarData';
 import SubMenu from './SubMenu';
-import {instructionStore} from '../../stores/InstructionStore';
+// import {instructionStore} from '../../stores/InstructionStore';
 import {IconContext} from 'react-icons/lib';
 
 interface SidebarProps {
@@ -88,13 +88,13 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
                                 onToggleSidebar={showSidebar}
                             />
                         ))}
-                        <InfoIconContainer>
+                        {/* <InfoIconContainer>
                             <FiInfo
                                 size={20}
                                 style={{cursor: 'pointer'}}
                                 onClick={() => instructionStore.openPopup()}
                             />
-                        </InfoIconContainer>
+                        </InfoIconContainer> */}
                     </SidebarWrap>
                     
                 </SidebarNav>

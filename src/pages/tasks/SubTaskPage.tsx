@@ -20,25 +20,17 @@ const SubTaskPage = observer(() => {
     // If general task -> return to home page
     if (task.page === 'general') {
       navigate('/');
-    } else if (task.page === 'esa-bad') {
+    } else if (task.page === 'hr') {
       navigate('/teams/Team1');
-    } else if (task.page === 'etid') {
+    } else if (task.page === 'it') {
       navigate('/teams/Team2');
-    } else if (task.page === 'tap') {
+    } else if (task.page === 'finance') {
       navigate('/teams/Team3');
-    } else if (task.page === 'eids') {
+    } else if (task.page === 'marketing') {
       navigate('/teams/Team4');
-    } else if (task.page === 'amedd') {
+    } else if (task.page === 'ops') {
       navigate('/teams/Team5');
     }
-    
-    // else {
-    //   // If team task -> naviage to corresponding team page
-    //   if (task.page)
-
-    //   console.log(`/teams/${task.page}`);
-    //   navigate(`/teams/${task.page}`);
-    // }
   };
 
   /* Function to get return button text */

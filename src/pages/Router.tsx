@@ -14,7 +14,6 @@ import MainLayout from '../layouts/MainLayout';
 import { AuthenticatedLayout } from '../layouts/AuthenticatedLayout';
 import { LoginPage } from './LoginPage';
 import { HomePage } from './HomePage';
-import { ResourcesPage } from './ResourcesPage';
 import { OnboardingAssistantPage } from './OnboardingAssistantPage'
 import { Team1Page } from './teams/Team1Page';
 import { Team2Page } from './teams/Team2Page';
@@ -70,7 +69,6 @@ export const Router = () => {
                     <Route element={<AuthenticatedLayout />}>
                         <Route path="/" element={<Outlet />}>
                             <Route index element={<HomePage />} />
-                            <Route path="resources" element={<ResourcesPage />} />
                             <Route path="OnboardingAssistant" element={<OnboardingAssistantPage />} />
 
                             {/* Teams Pages */} 

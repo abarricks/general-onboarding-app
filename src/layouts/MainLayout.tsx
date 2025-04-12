@@ -4,17 +4,17 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import '../styles/MainLayout.css';
 
 import styled from 'styled-components';
-import InstructionsPopUp from '../components/InstructionsPopUp';
-import { instructionStore } from '../stores/InstructionStore';
+// import InstructionsPopUp from '../components/InstructionsPopUp';
+// import { instructionStore } from '../stores/InstructionStore';
 
 const MainLayout: React.FC = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    useEffect(() => {
-        if(!instructionStore.doNotShowInstructions) {
-            instructionStore.openPopup();
-        }
-    }, []);
+    // useEffect(() => {
+    //     if(!instructionStore.doNotShowInstructions) {
+    //         instructionStore.openPopup();
+    //     }
+    // }, []);
 
     return (
         <div className={`main-layout ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
@@ -22,7 +22,7 @@ const MainLayout: React.FC = () => {
             <main className="content">
                 <Outlet />
             </main>
-            <InstructionsPopUp/>
+            {/* <InstructionsPopUp/> */}
         </div>
     );
 };

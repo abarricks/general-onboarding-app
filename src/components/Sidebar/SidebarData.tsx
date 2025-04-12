@@ -20,12 +20,6 @@ export const SidebarData: SidebarItem[] = [
 		icon: <AiFillHome />,
 	},
 	{
-		title: 'Resources',
-		path: '/resources',
-		icon: <IoIosPaper />,
-	},
-	
-	{
 		title: 'Onboarding Assistant',
 		path: '/OnboardingAssistant',
 		icon: <FaRobot />,
@@ -37,27 +31,27 @@ export const SidebarData: SidebarItem[] = [
 		iconOpened: <RiArrowUpSFill />,
 		subNav: [
 			{
-				title: 'ESA-BAD',
+				title: 'Human Resources',
 				path: 'teams/team1',
 				icon: <IoIosPaper />,
 			},
 			{
-				title: 'ETID',
+				title: 'Information Technology',
 				path: '/teams/team2',
 				icon: <IoIosPaper />,
 			},
 			{
-				title: 'TAP',
+				title: 'Marketing',
 				path: '/teams/team3',
 				icon: <IoIosPaper />,
 			},
 			{
-				title: 'EIDS',
+				title: 'Finance',
 				path: '/teams/team4',
 				icon: <IoIosPaper />,
 			},
 			{
-				title: 'AMEDD',
+				title: 'Operations',
 				path: '/teams/team5',
 				icon: <IoIosPaper />
 			}

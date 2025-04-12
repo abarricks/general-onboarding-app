@@ -347,105 +347,13 @@ export class ChatRoom {
             // initial delay collecting the partial
             setTimeout(() => collectMessage(agentMessage), 500);
 
-            /* !! ADDED Onboarding Document Context BELOW !! */
-            let pixel = `VectorDatabaseQuery(engine="d9854792-f750-4d94-82b4-36b63e0294f6", command="${userContent}", limit=${5})`;
-
-            const { actions } = useInsight();
-
-            const response = await actions.run(pixel);
-            const { output, operationType } = response.pixelReturn[0];
-
-            if (operationType.indexOf('ERROR') > -1) {
-                throw new Error(typeof output === 'object' && output !== null && 'response' in output 
-                  ? String(output.response) 
-                  : 'Unknown error');
-            }
-
-            const outputArray = Array.isArray(output) ? output : [];
-
-            let finalContent = '';
-
-            for (let i = 0; i <= outputArray.length - 1; i++) {
-                const content = output[i].content || output[i].Content;
-                finalContent += `\\n* `;
-                Object.keys(output[i]).map(
-                (source) =>
-                    (finalContent += `${source}: ${output[i][source]},`),
-                );
-                finalContent += ` ${content}`;
-            }
-
-            const contextDocs = `A context delimited by triple backticks is provided below. This context may contain plain text extracted from paragraphs or images. Tables extracted are represented as a 2D list in the following format - '[[Column Headers], [Comma-separated values in row 1], [Comma-separated values in row 2] ..... [Comma-separated values in row n]]'\\n \`\`\` ${finalContent} \`\`\`\\n }`;
-
-
-
-
-        // const response = await actions.run(pixel);
-        // const { output, operationType } = response.pixelReturn[0];
-
-
-
-        //     // const pixel = `
-        //     //     VectorDatabaseQuery (engine = "f4492ab4-90af-4d47-a0ab-5686261cb421", command = "${userContent}", limit = 5, filters=[], metaFilters=[]);`;
-            
-        //     // const response = await runPixel<Record<string, any>[]>(pixel);
-
-        //     // console.log(pixel);
-        //     // console.log(response);
-
-        //     // const { output, operationType } = response.pixelReturn[0];
-
-        //     if (operationType.indexOf('ERROR') > -1) throw new Error(output.response);
-
-
-        //     // const { errors: vectorErrors, pixelReturn: vectorReturn } = await runPixel<
-        //     //     [{ response: string; messageId: string }]
-        //     // >(
-        //     //     `
-        //     //     VectorDatabaseQuery(engine="${'d9854792-f750-4d94-82b4-36b63e0294f6'}" , command="<encode>${userContent}</encode>", limit=${5})
-        //     //     ;`,
-        //     // );
-
-        //     // const { output: vectorOutput, operationType: vectorOperationType} = vectorReturn[0];
-
-        //     // console.log("vectorReturn[0]", vectorReturn[0]);
-
-        //     // console.log("VECTOR OUTPUT TYPE: ", typeof vectorOutput, vectorOutput);
-        //     // console.log("IS ARRAY?", Array.isArray(vectorOutput));
-        //     // console.log("VECTOR OUTPUT: ", vectorOutput);
-
-        //     // if (vectorOperationType.indexOf('ERROR') > -1) throw new Error(vectorOutput.response);
-
-        //     //Looping through Vector Database Query and forming a content string with name, page, and content
-
-        //     let finalContent = '';
-
-        //     for (let i = 0; i <= output.length - 1; i++) {
-        //         const content = output[i].content || output[i].Content;
-        //         finalContent += `\\n* `;
-        //         Object.keys(output[i]).map(
-        //             (source) =>
-        //                 (finalContent += `${source}: ${output[i][source]},`),
-        //         );
-        //         finalContent += ` ${content}`;
-        //     }
-
-        //     const contextDocs = `A context delimited by triple backticks is provided below. This context may contain plain text extracted from paragraphs or images. Tables extracted are represented as a 2D list in the following format - '[[Column Headers], [Comma-separated values in row 1], [Comma-separated values in row 2] ..... [Comma-separated values in row n]]'\\n \`\`\` ${finalContent} \`\`\`\\n }`;
-
-        //     console.log("CONTEXTDOCS: ", contextDocs)
-
-            // const vectorContext = vectorReturn[0];
-            // console.log(vectorContext)
-
-            /* !! ADDED Onboarding Document Context ABOVE !! */
-
             // wait for the pixel to run
             const { errors, pixelReturn } = await runPixel<
                 [{ response: string; messageId: string }]
             >(
                 `LLM(engine=["${this._store.modelId}"],
                     ${
-                        `context=["<encode>${contextDocs}</encode>"],`
+                        `context=[""],`
                     } command=["<encode>${userContent}</encode>"], paramValues=[${JSON.stringify(
                     {
                         max_new_tokens: this._store.options.tokenLength,

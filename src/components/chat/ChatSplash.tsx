@@ -72,11 +72,9 @@ const StyledContext = styled(Button)(({ theme }) => ({
 const StyledContextText = styled('span', {
     shouldForwardProp: (prop) => prop !== 'custom',
 })<{
-    /** Track if it is the custom context */
     custom: boolean;
 }>(({ theme, custom }) => ({
     ...theme.typography.body2,
-    // two lineheight
     height: `${2 * 1.43 * 14}px`,
     color: custom
         ? theme.typography.caption.color
@@ -93,8 +91,6 @@ const StyledContextText = styled('span', {
 
 export const ChatSplash = observer(() => {
     const { chat } = useChat();
-
-    // custom
     const [isCustomOpen, setCustomOpen] = useState(false);
     const [customContext, setCustomContext] = useState('');
 
@@ -226,121 +222,9 @@ export const ChatSplash = observer(() => {
                         </div>
                     </StyledTitle>
                     <StyledDescription variant="body1">
-                        Here to help answer your questions about the onboarding process. Information from the following onboarding documents were used to train this model: BPASS Business Processes (PPT), How to request a CAC card (DOC), ESA-BAD Onboarding-Offboarding Processes (PPT), Deloitte MITO & ESA-BAD Onboarding (PPT), and SEMOSS and GovConnect.ai trainings (PPTs).
+                    Our AI-powered assistant is here to guide you through your onboarding journey, providing instant access to essential resources, personalized training schedules, and answers to your questions. Designed to streamline your onboarding experience, our assistant ensures you have everything you need to succeed from day one.
                     </StyledDescription>
-                </StyledPaper> 
-                    {/* <Stack
-                        direction={'row'}
-                        alignItems={'center'}
-                        justifyContent={'space-between'}
-                        flexWrap={'wrap'}
-                    >
-                        <Box>
-                            <Typography variant="h6">Welcome to the B-PASS Onboarding Assistant</Typography>
-                            <Typography variant="body1">Here to help answer your onboarding questions.</Typography>
-                        </Box>
-                        
-
-                        
-                        <StyledAction elevation={1}>
-                            <Typography variant="subtitle2">Model</Typography>
-                            <StyledActionSelect
-                                select
-                                size={'small'}
-                                placeholder="Select Model"
-                                value={chat.models.selected}
-                                onChange={(e) =>
-                                    chat.setSelectedModel(e.target.value)
-                                }
-                            >
-                                {chat.models.options.map((m) => (
-                                    <MenuItem key={m.app_id} value={m.app_id}>
-                                        {m.app_name}
-                                    </MenuItem>
-                                ))}
-                            </StyledActionSelect>
-                        </StyledAction>
-                    </Stack> */}
-
-                    {/* <StyledSectionTitle variant="subtitle2">
-                        Example Questions
-                    </StyledSectionTitle>
-                    <Box>
-                        <Grid container spacing={2}>
-                            <Grid xs={12} sm={12} md={4} lg={3}>
-                            <Tooltip title={'Click to ask sample question'} children={undefined}>
-                                <span>
-                                    <StyledContext
-                                        disabled={!chat.models.selected}
-                                        onClick={() => }
-                                    
-                                    >
-
-                                    </StyledContext>
-                                </span>
-                            
-                            </Tooltip>
-
-                            </Grid>
-                        </Grid> 
-                    </Box> */}
-
-
-
-                    {/* <Box>
-                        <Grid container spacing={2}>
-                            <Grid xs={12} sm={12} md={4} lg={3}>
-                                <Tooltip
-                                    title={
-                                        'Provide custom instructions to the chat'
-                                    }
-                                >
-                                    <span>
-                                        <StyledContext
-                                            disabled={!chat.models.selected}
-                                            onClick={() => setCustomOpen(true)}
-                                        >
-                                            <StyledContextText custom={true}>
-                                                Custom
-                                            </StyledContextText>
-                                        </StyledContext>
-                                    </span>
-                                </Tooltip>
-                            </Grid>
-                            {INSTRUCTIONS.map((i) => {
-                                return (
-                                    <Grid
-                                        key={i.id}
-                                        xs={12}
-                                        sm={12}
-                                        md={4}
-                                        lg={3}
-                                    >
-                                        <Tooltip title={i.description}>
-                                            <span>
-                                                <StyledContext
-                                                    disabled={
-                                                        !chat.models.selected
-                                                    }
-                                                    onClick={() => {
-                                                        setRoomTemplate(
-                                                            i.context,
-                                                        );
-                                                    }}
-                                                >
-                                                    <StyledContextText
-                                                        custom={false}
-                                                    >
-                                                        {i.description}
-                                                    </StyledContextText>
-                                                </StyledContext>
-                                            </span>
-                                        </Tooltip>
-                                    </Grid>
-                                );
-                            })}
-                        </Grid>
-                    </Box> */}
+                </StyledPaper>
                 </Container>
             </StyledContainer>
             <Dialog
